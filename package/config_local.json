@@ -1,0 +1,52 @@
+{
+    "3.5.0": [{
+            "name": "login",
+            "version": "3.5.0",
+            "branch": "feature/link-3.5.0",
+            "buildtype": "debug"
+        },
+        {
+            "name": "platform",
+            "version": "3.5.0",
+            "branch": "feature/link-3.5.0",
+            "buildtype": "debug"
+        },
+        {
+            "name": "house",
+            "version": "3.5.0",
+            "branch": "feature/link-3.5.0",
+            "buildtype": "debug"
+        },
+        {
+            "name": "customer",
+            "version": "3.5.0",
+            "branch": "feature/link-3.5.0",
+            "buildtype": "debug"
+        }
+    ],
+    "3.4.0": [{
+            "name": "login",
+            "version": "3.4.0",
+            "branch": "feature/link-3.4.0",
+            "buildtype": "debug"
+        },
+        {
+            "name": "platform",
+            "version": "3.4.0",
+            "branch": "feature/link-3.4.0",
+            "buildtype": "debug"
+        },
+        {
+            "name": "house",
+            "version": "3.4.0",
+            "branch": "feature/link-3.4.0",
+            "buildtype": "debug"
+        },
+        {
+            "name": "customer",
+            "version": "3.4.0",
+            "branch": "feature/link-3.4.0",
+            "buildtype": "debug"
+        }
+    ]
+}
