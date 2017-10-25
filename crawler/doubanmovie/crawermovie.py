@@ -31,8 +31,8 @@ score_min = top.mscore.min()
 count_max = top.mcount.max()
 count_min = top.mcount.min()
 
-score_range = score_max - score_min
-count_range = count_max - count_min
+# score_range = score_max - score_min
+# count_range = count_max - count_min
 
 print score_max
 plt.scatter(top.mscore.astype(float), top.mcount.astype(float))

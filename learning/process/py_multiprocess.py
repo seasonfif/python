@@ -23,8 +23,8 @@ def test1():
 		p.join()
 
 def test2():
-	pool = multiprocessing.Pool(processes=4)
-	for i in range(3):
+	pool = multiprocessing.Pool(processes=6)
+	for i in range(7):
 		res = pool.apply_async(cal, (i,))
 		results.append(res)
 	pool.close()
