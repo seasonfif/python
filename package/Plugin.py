@@ -11,10 +11,10 @@ class Plugin(object):
 		self.branch = branch
 		self.buildtype = buildtype
 	
-	def setRepoDir(self, dir):
-		self.dir = dir
+	def set_repo_dir(self, repo_dir):
+		self.repo_dir = repo_dir
 
-	def setLatestVersion(self, latest_version):
+	def set_latest_version(self, latest_version):
 		self.latest_version = latest_version
 
 	def append_build_plugin(self, plugin):
@@ -24,4 +24,4 @@ class Plugin(object):
 		return self.__plugins_need_build
 
 	def display(self):
-		print str(self.name) + " " + str(self.dir) + " " + str(self.latest_version)
+		print str(self.name) + " " + str(self.repo_dir) + " " + str(self.latest_version)

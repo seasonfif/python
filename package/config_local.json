@@ -2,50 +2,38 @@
     "3.5.0": [{
             "name": "login",
             "version": "3.5.0",
-            "branch": "feature/link-3.5.0",
-            "buildtype": "debug"
+            "branch": "master",
+            "buildtype": "newlinkDebug"
         },
         {
             "name": "platform",
             "version": "3.5.0",
-            "branch": "feature/link-3.5.0",
-            "buildtype": "debug"
-        },
-        {
-            "name": "house",
-            "version": "3.5.0",
-            "branch": "feature/link-3.5.0",
-            "buildtype": "debug"
-        },
-        {
-            "name": "customer",
-            "version": "3.5.0",
-            "branch": "feature/link-3.5.0",
-            "buildtype": "debug"
+            "branch": "master",
+            "buildtype": "newlinkDebug"
         }
     ],
     "3.4.0": [{
             "name": "login",
             "version": "3.4.0",
-            "branch": "feature/link-3.4.0",
+            "branch": "master",
             "buildtype": "debug"
         },
         {
             "name": "platform",
             "version": "3.4.0",
-            "branch": "feature/link-3.4.0",
+            "branch": "master",
             "buildtype": "debug"
         },
         {
             "name": "house",
             "version": "3.4.0",
-            "branch": "feature/link-3.4.0",
+            "branch": "master",
             "buildtype": "debug"
         },
         {
             "name": "customer",
             "version": "3.4.0",
-            "branch": "feature/link-3.4.0",
+            "branch": "master",
             "buildtype": "debug"
         }
     ]
