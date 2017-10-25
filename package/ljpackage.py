@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 import os
+import shutil
 import sys
 import time
 import subprocess
@@ -8,12 +9,13 @@ import multiprocessing
 from os import path
 import json
 from Plugin import *
+from PackageFailedError import *
 
-def get_repo_dir(plugin):
+def get_repo_dir(name):
 	# 初始化各插件代码仓库
 	repo_dirs = json.load(open(path.join(path.dirname(__file__), "plugin_path.json")))
 	try:
-		repo_dir = repo_dirs[plugin.name]
+		repo_dir = repo_dirs[name]
 	except BaseException, e:
 		repo_dir = None
 	else:
@@ -51,7 +53,8 @@ def init_plugins_by_host(host):
 		for p in plugin_list:
 			plugin = Plugin(p["name"], p["version"], 
 					p["branch"], p["buildtype"],)
-			plugin.set_repo_dir(get_repo_dir(plugin))
+			plugin.set_repo_mian_dir(get_repo_dir(plugin.name))
+			plugin.set_repo_dir(path.dirname(plugin.repo_mian_dir))
 			# plugin.set_latest_version(get_latest_version(plugin))
 			plugin.set_latest_version("111")
 			host.append_build_plugin(plugin)
@@ -87,27 +90,70 @@ def build_plugin(plugin):
 	code = os.system(build_commands)
 	return code
 
+def analyse_plugins_build_result():
+	failed = []
+	for res_tup in results:
+		return_code = res_tup[1].get()
+		print return_code
+		if return_code != 0:
+			failed.append(res_tup[0])
+	
+	if len(failed) > 0:
+		raise PackageFailedError("package link failed!!!", failed)
+
+def mv_plugin_to_host(host):
+	host_plugins_dir = path.join(host.repo_mian_dir, "src", "main", "assets", "plugins") 
+	print host_plugins_dir
+	for p in plugins:
+		# if p.rebuild:
+			# 修改host.repo_mian_dir
+			plugin_path = path.join(host.repo_mian_dir, "build", "outputs","aar")
+			files = os.listdir(plugin_path)
+			from_file = path.join(plugin_path, files[0])
+			to_file = path.join(path.dirname(__file__), host.name + ".jar")
+			shutil.copyfile(from_file, to_file)
+
+def package_host(host):
+	package_commands = 'cd %s && gradle assemble%s' % (host.repo_dir, str(host.buildtype).capitalize())
+	code = os.system(package_commands)
+	if code == 0:
+		pass
+	return code
+
 if __name__ == "__main__":
 	multiprocessing.freeze_support()
+	# 所有插件集合
+	plugins = []
+	# 插件编译结果集
 	results = []
-	host = Plugin("link", "3.5.0", "feature/link-3.5.0", "debug")
+	host = Plugin("link", "3.5.0", "master", "newlinkDebug")
+	host.set_repo_mian_dir(get_repo_dir(host.name))
+	host.set_repo_dir(path.dirname(host.repo_mian_dir))
 	init_plugins_by_host(host)
 	stored_versions = get_stored_version()
 	# 创建进程池执行编译任务
 	pool = multiprocessing.Pool(processes=4)
 	t = time.time()
-	for p in host.get_build_plugins():
-		p_store_version = get_stored_version_by_plugin(p.name, stored_versions)
-		if p_store_version == p.latest_version:
-			print "版本相同，忽略打包"
-			pass
-		else:
-			stored_versions[p.name] = p.latest_version
-			res = pool.apply_async(build_plugin, (p,))
-			results.append(res)
-	pool.close()
-	pool.join()
-	print "All process done.", time.time()-t
-	for res in results:
-		print res.get()
-	# update_stored_version(stored_versions)
+	plugins = host.get_build_plugins()
+	# for p in plugins:
+	# 	p_store_version = get_stored_version_by_plugin(p.name, stored_versions)
+	# 	if p_store_version == p.latest_version:
+	# 		p.set_rebuild(False)
+	# 		print "版本相同，忽略打包"
+	# 		pass
+	# 	else:
+	# 		p.set_rebuild(True)
+	# 		stored_versions[p.name] = p.latest_version
+	# 		res = pool.apply_async(build_plugin, (p,))
+	# 		results.append((p, res))
+	# pool.close()
+	# pool.join()
+	# print "All process done.", time.time()-t
+	try:
+		analyse_plugins_build_result()
+	except PackageFailedError, e:
+		e.print_error()
+	else:
+		# mv_plugin_to_host(host)
+		update_stored_version(stored_versions)
+	package_host(host)

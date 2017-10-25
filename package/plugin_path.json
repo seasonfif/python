@@ -1,7 +1,7 @@
 {
-    "main": "d:\\lianjia\\newlink-plugin2",
-    "login": "d:\\lianjia\\newlink-plugin2",
-    "platform": "d:\\lianjia\\newlink-plugin2",
-    "house": "d:\\lianjia\\newlink-plugin2",
-    "customer": "d:\\lianjia\\newlink-plugin2"
+    "link": "d:\\lianjia\\newlink-plugin2\\im",
+    "login": "d:\\lianjia\\newlink-plugin2\\im",
+    "platform": "d:\\lianjia\\newlink-plugin2\\im",
+    "house": "d:\\lianjia\\newlink-plugin2\\im",
+    "customer": "d:\\lianjia\\newlink-plugin2\\im"
 }

@@ -14,12 +14,18 @@ class Plugin(object):
 	def set_repo_dir(self, repo_dir):
 		self.repo_dir = repo_dir
 
+	def set_repo_mian_dir(self, repo_mian_dir):
+		self.repo_mian_dir = repo_mian_dir
+
 	def set_latest_version(self, latest_version):
 		self.latest_version = latest_version
 
 	def append_build_plugin(self, plugin):
 		self.__plugins_need_build.append(plugin)
 	
+	def set_rebuild(self, rebuild):
+		self.rebuild = rebuild
+
 	def get_build_plugins(self):
 		return self.__plugins_need_build
 
