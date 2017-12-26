@@ -1,0 +1,76 @@
+[{
+	"href": "/larshp/abapGit",
+	"des": "Git client for ABAP"
+}, {
+	"href": "/emilybache/Tennis-Refactoring-Kata",
+	"des": "Starting code for a Refactoring Code Kata on the Tennis rules"
+}, {
+	"href": "/ivanfemia/abap2xlsx",
+	"des": "Generate your professional Excel spreadsheet from ABAP"
+}, {
+	"href": "/abramsba/AbapExamples",
+	"des": "An ABAP reference examples for common technical tasks"
+}, {
+	"href": "/epeterson320/ABAP-Logger",
+	"des": "ABAP Logging as painless as any other language"
+}, {
+	"href": "/rvanmil/ABAP-OOP-Library",
+	"des": "ABAP Object-oriented programming Library"
+}, {
+	"href": "/mauriciolauffer/ABAP",
+	"des": "ABAP Code sample"
+}, {
+	"href": "/larshp/abapOpenChecks",
+	"des": "Open source checks for SAP Code Inspector / ABAP Test Cockpit"
+}, {
+	"href": "/cesar-sap/abap_fm_json",
+	"des": "JSON adapter for ABAP Function Modules."
+}, {
+	"href": "/moreus/ABAPDesignPattern",
+	"des": ""
+}, {
+	"href": "/Kaufland/abap_oo_patterns",
+	"des": "Example implementation of OO design patterns in ABAP"
+}, {
+	"href": "/rvanmil/ABAP-Regex-Training",
+	"des": "ABAP Regular Expressions Training"
+}, {
+	"href": "/larshp/ABAP-Object-Visualizer",
+	"des": "Visualize complex object hierarchies using debugger script"
+}, {
+	"href": "/sbcgua/mockup_loader",
+	"des": "SAP ABAP tool for unit testing"
+}, {
+	"href": "/larshp/abapGitServer",
+	"des": "Git server implemented in ABAP"
+}, {
+	"href": "/fidley/falv",
+	"des": "FALV - Fast ALV Grid"
+}, {
+	"href": "/SAP2Moose/SAP2Moose",
+	"des": "A project to extract model data from a SAP system using FAMIX to import into the Moose Analysis platform"
+}, {
+	"href": "/larshp/ABAP-Swagger",
+	"des": "Expose ABAP REST services with Swagger spec"
+}, {
+	"href": "/Sumu-Ning/AES",
+	"des": "ABAP Utilities for AES/Rijndael encryption, decryption"
+}, {
+	"href": "/lucattelli/ZICA_ML",
+	"des": "Z Instant Comprehensive ABAP - Machine Learning Library"
+}, {
+	"href": "/Yelcho/sapui5-deployer",
+	"des": "ABAP deployment of SAPUI5 apps from Github"
+}, {
+	"href": "/koemaeda/abap-markdown",
+	"des": "ABAP Markdown"
+}, {
+	"href": "/HannesRempel/ABAP-Commons",
+	"des": "Providing reusable ABAP components"
+}, {
+	"href": "/fatihpense/zcl_mdp_json",
+	"des": "Medepia ABAP JSON library that can generate and parse any JSON string."
+}, {
+	"href": "/pixelbaker/ABAP-RayTracer",
+	"des": "ABAP RayTracer"
+}]

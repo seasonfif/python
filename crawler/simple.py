@@ -2,5 +2,5 @@
 # coding=utf-8
 
 import urllib
-resp = urllib.urlopen("http://www.baidu.com").read()
+resp = urllib.urlopen("https://github.com/trending?l=abap&since=weekly").read()
 print resp
